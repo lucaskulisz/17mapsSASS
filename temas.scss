@@ -1,0 +1,40 @@
+
+$temas: (
+  primario: var(--color-tema-primario, #3498db),
+  secundario: #e74c3c,
+  resaltado: #f39c12,
+  fondo: #f0f0f0,
+);
+
+@function tema-color($tema) {
+  @if map-has-key($temas, $tema) {
+    @return map-get($temas, $tema);
+  } @else {
+    @warn "El tema '#{$tema}' no está definido en el mapa de temas.";
+    @return null;
+  }
+}
+
+// Estilos para los elementos HTML utilizando los colores temáticos
+.tema-primario {
+  background-color: tema-color(primario);
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-secundario {
+  background-color: tema-color(secundario);
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-resaltado {
+  background-color: tema-color(resaltado);
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-fondo {
+  background-color: tema-color(fondo);
+  padding: 20px;
+}

@@ -1,0 +1,22 @@
+.tema-primario {
+  background-color: var(--color-tema-primario, #3498db);
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-secundario {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-resaltado {
+  background-color: #f39c12;
+  color: #fff;
+  padding: 20px;
+}
+
+.tema-fondo {
+  background-color: #f0f0f0;
+  padding: 20px;
+}/*# sourceMappingURL=temas.css.map */

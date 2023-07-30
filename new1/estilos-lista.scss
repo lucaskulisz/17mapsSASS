@@ -1,0 +1,25 @@
+/* estilos-lista.scss */
+
+// Importar el archivo de reset
+@import 'reset';
+
+/* Estilos específicos de la lista de navegación */
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+
+  a {
+    display: block;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}

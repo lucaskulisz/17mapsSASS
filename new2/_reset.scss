@@ -1,0 +1,12 @@
+/* _reset.scss */
+
+/* Reset de márgenes y relleno para todos los elementos */
+html, body, form, input, label {
+  margin: 0;
+  padding: 0;
+}
+
+/* Eliminar decoración de enlace */
+a {
+  text-decoration: none;
+}

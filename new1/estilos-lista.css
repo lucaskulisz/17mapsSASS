@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* estilos-lista.scss */ /* _reset.scss */
+/* Reset de márgenes y relleno para todos los elementos */
+html, body, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+/* Eliminar decoración de enlace */
+a {
+  text-decoration: none;
+}
+
+/* Estilos específicos de la lista de navegación */
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+li a {
+  display: block;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+}
+li a:hover {
+  background-color: #2980b9;
+}/*# sourceMappingURL=estilos-lista.css.map */

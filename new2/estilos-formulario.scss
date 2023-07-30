@@ -1,0 +1,38 @@
+/* estilos-formulario.scss */
+
+// Importar el archivo de reset
+@import 'reset';
+
+/* Estilos generales para el formulario, input y label */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input, label {
+  margin-bottom: 10px;
+}
+
+/* Estilos adicionales para diferentes tipos de campos de entrada */
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+}
+
+input[type="email"] {
+  // Agregar estilos específicos para el campo de correo electrónico
+color: aqua;
+}
+
+input[type="password"] {
+  // Agregar estilos específicos para el campo de contraseña
+color: #3498db;
+}

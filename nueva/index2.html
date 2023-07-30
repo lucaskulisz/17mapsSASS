@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamaño de Fuente</title>
+  <link rel="stylesheet" href="tipografia.css">
+</head>
+<body>
+  <h1 class="tamano-fuente" data-elemento="encabezado">Encabezado</h1>
+  <p class="tamano-fuente" data-elemento="parrafo">Párrafo de ejemplo.</p>
+  <a class="tamano-fuente" data-elemento="enlace" href="#">Enlace</a>
+
+  <!-- Selector para elegir el elemento -->
+  <label for="elemento">Elemento:</label>
+  <select id="elemento">
+    <option value="encabezado">Encabezado</option>
+    <option value="parrafo">Párrafo</option>
+    <option value="enlace">Enlace</option>
+  </select>
+
+  <!-- Selector para elegir el factor -->
+  <label for="factor">Factor:</label>
+  <input type="number" id="factor" step="0.1" value="1">
+
+  <!-- Script para aplicar los estilos en tiempo real -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elementoSelector = document.getElementById("elemento");
+      const factorInput = document.getElementById("factor");
+
+      elementoSelector.addEventListener("change", function() {
+        applyFontSize();
+      });
+
+      factorInput.addEventListener("input", function() {
+        applyFontSize();
+      });
+
+      function applyFontSize() {
+        const elemento = elementoSelector.value;
+        const factor = parseFloat(factorInput.value);
+        const elementos = document.querySelectorAll(`[data-elemento="${elemento}"]`);
+        elementos.forEach(el => {
+          el.style.fontSize = `${tamanoFuente(elemento, factor)}px`;
+        });
+      }
+
+      // Función para obtener el tamaño de fuente correspondiente al elemento multiplicado por el factor
+      function tamanoFuente(elemento, factor) {
+        const tipografia = {
+          encabezado: 24,
+          parrafo: 16,
+          enlace: 14
+          // Puedes agregar más elementos y tamaños de fuente según tus necesidades
+        };
+
+        return tipografia[elemento] * factor;
+      }
+    });
+  </script>
+</body>
+</html>

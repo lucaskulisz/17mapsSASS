@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colores Temáticos</title>
+  <link rel="stylesheet" href="temas.css">
+</head>
+<body>
+  <div class="tema-primario">Tema Primario</div>
+  <div class="tema-secundario">Tema Secundario</div>
+  <div class="tema-resaltado">Tema Resaltado</div>
+  <div class="tema-fondo">Tema de Fondo</div>
+  
+  <!-- Selector de colores -->
+  <input type="color" id="color-selector">
+  <!-- Agrega esto justo antes del cierre del body en index.html -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const colorSelector = document.getElementById("color-selector");
+
+    colorSelector.addEventListener("change", function() {
+      const chosenColor = colorSelector.value;
+      document.documentElement.style.setProperty('--color-tema-primario', chosenColor);
+    });
+  });
+</script>
+
+</body>
+</html>
+

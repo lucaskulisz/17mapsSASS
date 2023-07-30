@@ -1,0 +1,54 @@
+// tipografia.scss
+
+// Definir el mapa con los tamaños de fuente para diferentes elementos
+$tipografia: (
+  encabezado: 24px,
+  parrafo: 16px,
+  enlace: 14px,
+  // Puedes agregar más elementos y tamaños de fuente según tus necesidades
+);
+
+// Función para obtener el tamaño de fuente correspondiente al elemento multiplicado por el factor
+@function tamano-fuente($elemento, $factor) {
+  $tamanoBase: map-get($tipografia, $elemento);
+
+  @if not $tamanoBase {
+    @warn "El elemento '#{$elemento}' no está definido en el mapa de tipografía.";
+    @return null;
+  }
+
+  @return $tamanoBase * $factor;
+}
+/* @if $noSeVe{
+        display: flex;
+    }@else {
+        display: none;
+    } */
+// Declaración de una variable booleana
+/* $es-activo: true;
+
+// Uso de la variable booleana en un estilo condicional
+.btn {
+  background-color: if($es-activo, blue, red);
+  cursor: if($es-activo, pointer, not-allowed);
+} */
+/* @if $isVisible {
+    @extend .show-element;
+  } @else {
+    @extend .hide-element; */
+// tipografia.scss
+
+// Resto del código...
+
+// Estilos para los elementos HTML utilizando los tamaños de fuente escalables
+h1 {
+  font-size: tamano-fuente(encabezado, 1);
+}
+
+p {
+  font-size: tamano-fuente(parrafo, 1);
+}
+
+a {
+  font-size: tamano-fuente(enlace, 1);
+}
